@@ -7,11 +7,12 @@
 -- TABLE NOTES
 -- The ifood_customers table contains 2,205 customer records.
 -- Derived columns added during prep:
---   Age_Bracket             — Binned from Age (18-29 | 30-39 | 40-49 | 50-59 | 60+)
---   Has_Children            — "Yes" if Kidhome + Teenhome > 0, else "No"
---   Total_Spend             — Alias for MntTotal_Corrected (sum of all product spend)
---   Total_Campaigns_Accepted— Alias for AcceptedCmpOverall (campaigns 1–5 accepted)
---   Income_Bracket          — Binned from Income (<30k | 30k-50k | 50k-70k | 70k-90k | 90k+)
+--   Age_Bracket             : Binned from Age (18-29 | 30-39 | 40-49 | 50-59 | 60+)
+--   Has_Children            : "Yes" if Kidhome + Teenhome > 0, else "No"
+--   Total_Spend             : Sum of the six product spend columns (wines, fruits,
+--                             meat, fish, sweets, gold)
+--   Total_Campaigns_Accepted: Alias for AcceptedCmpOverall (campaigns 1–5 accepted)
+--   Income_Bracket          : Binned from Income (<30k | 30k-50k | 50k-70k | 70k-90k | 90k+)
 -- =============================================================================
 
 
@@ -60,7 +61,7 @@ ORDER BY Has_Children;
 
 -- Key finding: Customers without children favour catalog (4.71) and store (7.32)
 -- channels. Customers with children use deals significantly more (2.79 vs 1.13)
--- and are lower across all premium channels — suggesting price sensitivity.
+-- and are lower across all premium channels, suggesting price sensitivity.
 
 
 -- =============================================================================
